@@ -54,14 +54,14 @@
                   <th class="hidden"></th>
                   <th>Tanggal</th>
                   <th>Waktu</th>
-                  <th>Nama Organisasi</th>
+                  <th>Asal Organisasi</th>
                   <th>Nama Pemilihan</th>
                   <th>Opsi</th>
                 </thead>
                 <tbody>
                   <?php
                     $sql = "SELECT * FROM jadwal ORDER BY priority ASC";
-                    $query = $conn->query($sql);
+                   if( $query = $conn->query($sql)){;
                     while($row = $query->fetch_assoc()){
                       echo "
                         <tr>
@@ -77,6 +77,7 @@
                         </tr>
                       ";
                     }
+                  }
                   ?>
                 </tbody>
               </table>
